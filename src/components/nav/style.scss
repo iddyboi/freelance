@@ -1,0 +1,28 @@
+@import '../../scss/global';
+
+nav {
+  background-color: $main-color;
+  width: 100%;
+  height: 72px;
+  box-shadow: 5px 0 16px 0px rgba(0, 0, 0, 0.5);
+  .navigation {
+    @include container;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    ul {
+      display: flex;
+      li:not(:first-child) {
+        margin-left: 20px;
+      }
+      li {
+        .links {
+          color: $white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

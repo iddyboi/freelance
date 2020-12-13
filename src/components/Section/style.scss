@@ -1,0 +1,20 @@
+@import '../../scss/global';
+
+.section {
+  background-color: $main-color;
+  min-height: 60vh;
+  color: $white;
+  padding: 4em 0;
+  &__content {
+    @include container;
+    height: 100%;
+    &--heading {
+      font-size: 7rem;
+    }
+    &--lead {
+      font-size: 1.2rem;
+      max-width: 60%;
+      margin-bottom: 5rem;
+    }
+  }
+}

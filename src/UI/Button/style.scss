@@ -1,0 +1,11 @@
+@import '../../scss/global';
+
+.btn {
+  background-color: $main-color;
+  border: none;
+  color: $white;
+  padding: 1em 4em;
+  margin: 1em 0;
+  font-weight: bold;
+  font-size: 1rem;
+}

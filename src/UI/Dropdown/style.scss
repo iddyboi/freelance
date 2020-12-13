@@ -1,0 +1,29 @@
+@import '../../scss/global';
+
+.dropdown {
+  background-color: $white;
+  border-radius: 5px;
+  color: $main-color;
+  padding: 1em 2em;
+  margin: 1em 0;
+  cursor: pointer;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    &--heading {
+      margin-bottom: 20px;
+    }
+  }
+  &__content {
+    p:not(:last-child) {
+      margin: 0.5em 0;
+    }
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.hide {
+  display: none;
+}

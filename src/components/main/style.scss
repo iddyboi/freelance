@@ -1,0 +1,26 @@
+@import '../../scss/global';
+.main {
+  height: 80vh;
+}
+.hero {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &__heading {
+    color: $main-color;
+    h1 {
+      font-size: 7rem;
+    }
+    h2 {
+      font-size: 1.9rem;
+      color: $light-green;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+    p {
+      width: 70%;
+      font-weight: 600;
+    }
+  }
+}
