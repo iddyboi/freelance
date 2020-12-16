@@ -1,0 +1,66 @@
+@import '../../../scss/global';
+
+.heading {
+  @include container;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  h1 {
+    font-size: 3.2em;
+    margin-bottom: 0.3em;
+  }
+  p {
+    width: 500px;
+    line-height: 27.2px;
+    opacity: 0.8;
+  }
+}
+.start {
+  @include container;
+  h3 {
+    width: 600px;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+.income {
+  @include container;
+  &__amount {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin-top: 20px;
+    input {
+      width: 100%;
+      align-self: start;
+      padding: 1em 3em;
+      border: 3px solid rgb(32, 118, 230);
+      outline: none;
+      margin-top: 10px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  button {
+    cursor: pointer;
+  }
+  button:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+.total {
+  margin: 5em 0;
+  display: flex;
+  align-items: center;
+  h3 {
+    margin-right: 30px;
+    font-size: 2rem;
+  }
+  p {
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+}

@@ -9,8 +9,6 @@ interface Skills {
 
 const Section = () => {
   const [contents, setContents] = useState<Skills>({
-    // frontend: ['HTML', 'CSS', 'Javascript', 'React', 'Angular'],
-    // backend: ['Nodejs', 'Flask', 'PostgreSQL', 'MongoDB', 'Firebase'],
     frontendOptions: [
       {
         name: 'HTML',

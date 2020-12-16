@@ -1,0 +1,50 @@
+@import '../../scss/global';
+
+.work {
+  height: 80vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  h1 {
+    font-size: 8rem;
+  }
+}
+.work-details {
+  @include container;
+
+  &__lead {
+    margin-bottom: 5em;
+    width: 500px;
+  }
+  margin-top: 5rem;
+  &__process {
+    display: flex;
+    button {
+      margin: 1em 0;
+      padding: 1em 2em;
+      background-color: $main-color;
+      color: $white;
+      border: none;
+      cursor: pointer;
+    }
+    &--left {
+      flex-basis: 40%;
+      h1 {
+        margin-bottom: 0.5em;
+      }
+    }
+    &--right {
+      flex-basis: 60%;
+      padding-left: 1em;
+      h1 {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}

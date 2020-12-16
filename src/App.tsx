@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 import './App.scss';
 import Nav from './components/nav';
 import Home from './pages';
+import Work from './pages/work';
+import BudgetCalc from './pages/work/budget-calculator';
 
 const App: FC = () => {
   return (
@@ -10,10 +12,13 @@ const App: FC = () => {
       <BrowserRouter>
         <Nav />
         <Switch>
-          <Route path='/' component={Home} />
-          <Route path='*'>
-            <NoMatch />
+          <Route exact path='/'>
+            <Home />
           </Route>
+          <Route exact path='/work'>
+            <Work />
+          </Route>
+          <Route exact path='/work/budget' component={BudgetCalc} />
         </Switch>
       </BrowserRouter>
     </>
@@ -21,15 +26,3 @@ const App: FC = () => {
 };
 
 export default App;
-
-function NoMatch() {
-  let location = useLocation();
-
-  return (
-    <div>
-      <h3>
-        No match for <code>{location.pathname}</code>
-      </h3>
-    </div>
-  );
-}
