@@ -2,7 +2,7 @@
 
 .work {
   height: 80vh;
-
+  padding: 1em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +12,7 @@
   align-items: center;
   color: $white;
   h1 {
-    font-size: 8rem;
+    font-size: 4rem;
   }
 }
 .work-details {
@@ -20,11 +20,11 @@
 
   &__lead {
     margin-bottom: 5em;
-    width: 500px;
   }
   margin-top: 5rem;
   &__process {
     display: flex;
+    flex-direction: column;
     button {
       margin: 1em 0;
       padding: 1em 2em;

@@ -9,15 +9,20 @@
     margin-bottom: 0.3em;
   }
   p {
-    width: 500px;
+    width: 100%;
     line-height: 27.2px;
     opacity: 0.8;
+    @include for-size(desktop-up) {
+      width: 600px;
+    }
   }
 }
 .start {
   @include container;
   h3 {
-    width: 600px;
+    @include for-size(desktop-up) {
+      width: 600px;
+    }
   }
   button {
     cursor: pointer;
@@ -28,10 +33,13 @@
   &__amount {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 100%;
+    @include for-size(desktop-up) {
+      width: 50%;
+    }
     margin-top: 20px;
     input {
-      width: 100%;
+      width: 80%;
       align-self: start;
       padding: 1em 3em;
       border: 3px solid rgb(32, 118, 230);
@@ -43,24 +51,46 @@
 
 .buttons {
   display: flex;
+  flex-direction: column;
+  @include for-size(desktop-up) {
+    width: 46%;
+  }
   button {
     cursor: pointer;
   }
   button:not(:first-child) {
-    margin-left: 1em;
   }
 }
 .total {
   margin: 5em 0;
   display: flex;
   align-items: center;
+  flex-direction: column;
   h3 {
-    margin-right: 30px;
     font-size: 2rem;
   }
   p {
     color: green;
     font-size: 1.5rem;
     font-weight: 800;
+  }
+}
+.income-value {
+  margin-top: 30px;
+
+  @include for-size(desktop-up) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  &__items {
+    background-color: $light-green;
+    padding: 1em;
+    color: $main-color;
+    box-shadow: 0px 3px 10px gray;
+    margin: 1em 0;
+    @include for-size(desktop-up) {
+      margin: 0;
+    }
   }
 }

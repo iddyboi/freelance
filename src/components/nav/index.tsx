@@ -10,18 +10,19 @@ const Nav = () => {
           <h1>CodRis</h1>
           <ul>
             <li>
-              <a className='links' href='#'>
-                <Link className='links' to='/'>
-                  Home
-                </Link>
-              </a>
+              <Link className='links' to='/'>
+                Home
+              </Link>
             </li>
             <li>
-              <a className='links' href='#'>
-                <Link className='links' to='/work'>
-                  Work
-                </Link>
-              </a>
+              <Link className='links' to='/work'>
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link className='links' to='/profile'>
+                My Profile
+              </Link>
             </li>
           </ul>
         </div>

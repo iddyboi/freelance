@@ -7,6 +7,7 @@ interface Budget {
   income: Income[];
   totalIncome: number;
   incomeState: boolean;
+  expensesState: boolean;
 }
 
 interface Income {
@@ -21,10 +22,19 @@ const BudgetCalc = () => {
     income: [],
     totalIncome: 0,
     incomeState: false,
+    expensesState: false,
   });
 
   const onClear = () => {
-    setBudget({ ...budget, income: [], totalIncome: 0 });
+    setBudget((bug) => {
+      return {
+        ...bug,
+        value: 0,
+        name: '',
+        totalIncome: 0,
+        income: [],
+      };
+    });
   };
 
   return (
@@ -42,6 +52,7 @@ const BudgetCalc = () => {
       {budget.incomeState ? (
         <div className='budget'>
           <div className='income'>
+            <h1>Income</h1>
             <div className='income__amount'>
               <label>Income Name</label>
               <input
@@ -65,6 +76,7 @@ const BudgetCalc = () => {
             <div className='buttons'>
               <button
                 className='btn'
+                disabled={!budget.value && budget.name === ''}
                 onClick={() => {
                   setBudget({
                     ...budget,
@@ -78,7 +90,7 @@ const BudgetCalc = () => {
                   });
                 }}
               >
-                ADD
+                Add Income
               </button>
               <br />
 
@@ -86,21 +98,39 @@ const BudgetCalc = () => {
                 Clear
               </button>
 
-              <button className='btn'>Add Expenses</button>
+              <button
+                className='btn'
+                onClick={() =>
+                  setBudget({
+                    ...budget,
+                    expensesState: !budget.expensesState,
+                    incomeState: !budget.incomeState,
+                  })
+                }
+              >
+                Add Expenses
+              </button>
             </div>
-            {budget.income.map((i) => {
-              return (
-                <div>
-                  <h4> Amount Type: {i.name}</h4>
-                  <p>Amount: {i.amount}</p>
-                </div>
-              );
-            })}
+            <div className='income-value'>
+              {budget.income.map((i) => {
+                return (
+                  <div className='income-value__items'>
+                    <h4> Income Amount Name: {i.name}</h4>
+                    <p>Income Amount: £{i.amount}</p>
+                  </div>
+                );
+              })}
+            </div>
+
             <div className='total'>
               <h3>Income Total</h3>
               <p>£{budget.totalIncome}</p>
             </div>
           </div>
+        </div>
+      ) : budget.expensesState ? (
+        <div className='income'>
+          <h1>Expenses</h1>
         </div>
       ) : (
         <div className='start'>

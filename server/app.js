@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/api', (req, res) => {
-  res.json({ name: 'idris' });
+  res.json({ name: 'Idris' });
 });
 
 const port = 5000 || process.env.PORT;
